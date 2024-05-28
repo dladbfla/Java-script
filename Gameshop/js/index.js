@@ -12,6 +12,7 @@ axios.get(url)
     console.log("에러 발생: ", error);
 });
 
+
 function displayProducts(gameData){
     console.log(gameData.length);
     if(gameData.length>0){
@@ -32,6 +33,9 @@ function displayProducts(gameData){
             game.appendChild(title);
             game.appendChild(genre);
             game.appendChild(price);
+            game.addEventListener("click", ()=>{
+                window.location.href = "singleProduct.html?id=" + data.id;
+            });
             content.appendChild(game);
         });
     }
